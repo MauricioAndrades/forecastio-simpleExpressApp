@@ -6,18 +6,18 @@ $(function() {
     // 
     event.preventDefault();
 
-    var zipCode = $.trim($zip.val());
+    var zipcode = $.trim($zip.val());
     $h1.text("loading");
 
     // 
     var request = $.ajax({
-      url: "/" + zipCode,
+      url: "/" + zipcode,
       dataType: "json"
     });
     // 
     request.done(function(data) {
       var temperature = data.temperature;
-      $h1.text("It is " + temperature + "&#176; in " + zipCode + ".");
+      $h1.text("It is " + temperature + "in " + zipcode + ".");
     });
     // 
     request.fail(function() {
